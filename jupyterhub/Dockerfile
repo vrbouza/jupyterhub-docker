@@ -2,6 +2,9 @@ FROM jupyterhub/jupyterhub:1.1.0
 
 COPY jupyterhub_config.py .
 
+RUN apt-get update \
+  && apt-get install -y wget
+
 RUN wget https://raw.githubusercontent.com/jupyterhub/jupyterhub/1.1.0/examples/cull-idle/cull_idle_servers.py
 
 RUN pip install \

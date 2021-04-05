@@ -1,9 +1,11 @@
-FROM jupyterhub/jupyterhub:0.9.3
+FROM jupyterhub/jupyterhub:1.1.0
 
 COPY jupyterhub_config.py .
 
-RUN wget https://raw.githubusercontent.com/jupyterhub/jupyterhub/0.9.3/examples/cull-idle/cull_idle_servers.py
+RUN wget https://raw.githubusercontent.com/jupyterhub/jupyterhub/1.3.0/examples/cull-idle/cull_idle_servers.py
 
 RUN pip install \
-    dockerspawner==0.10.0 \
-    jhub_cas_authenticator==1.0.0
+    dockerspawner==12.0.0 \
+    #jhub_cas_authenticator==1.0.0
+    #jupyterhub-ldapauthenticator # oficial
+    jupyterhub-ldap-authenticator # oficioso

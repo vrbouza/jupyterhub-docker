@@ -1,4 +1,4 @@
-version: '3'
+version: '0'
 
 services:
   jupyterhub:
@@ -7,7 +7,7 @@ services:
     container_name: jupyterhub
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - jupyterhub_data:/srv/jupyterhub
+      - /opt/jupyterhub-swaneau/data/srv/jupyterhub:/srv/jupyterhub
     environment:
       - DOCKER_JUPYTER_CONTAINER=jupyterlab_img
       - DOCKER_NETWORK_NAME=${COMPOSE_PROJECT_NAME}_default
@@ -38,5 +38,3 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
 
-volumes:
-  jupyterhub_data:

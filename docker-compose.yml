@@ -22,7 +22,7 @@ services:
     build: jupyterlab
     image: jupyterlab_img
     container_name: jupyterlab-throaway
-    network_mode: none
+    #network_mode: none
     command: echo
 
   reverse-proxy:
@@ -38,3 +38,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
 
+volumes:

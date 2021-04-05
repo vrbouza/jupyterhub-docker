@@ -1,5 +1,6 @@
 FROM jupyter/scipy-notebook:4d9c9bd9ced0
 
+LABEL maintainer="Luca De Feo <https://defeo.lu/>"
 USER root
 
 # APT packages

@@ -22,11 +22,11 @@ USER $NB_UID
 # Conda packages
 # Sage conflicts with the latest jupyterhub, thus we must relax the pinning
 RUN conda install --quiet --yes \
-    'jupyterhub' \
+    'jupyterhub'
 #    'sage=8.*' \
-    'julia=1.0*' && \
-    conda clean -tipsy && \
-    fix-permissions $CONDA_DIR
+    #'julia=1.0*' && \
+    #conda clean -tipsy && \
+    #fix-permissions $CONDA_DIR
 
 ENV CPATH=$CONDA_DIR/include
 

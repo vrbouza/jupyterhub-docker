@@ -31,7 +31,7 @@ RUN conda install --quiet --yes \
 ENV CPATH=$CONDA_DIR/include
 
 RUN pip install \
-    pari_jupyter \
+    pari_jupyter
 
 
 USER $NB_UID

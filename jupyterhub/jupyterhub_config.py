@@ -9,7 +9,7 @@
 ##    docker volume rm <name>_jupyterhub_data
 ##
 
-import os
+import os, sys
 
 ## Generic
 c.JupyterHub.admin_access = True

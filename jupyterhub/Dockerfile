@@ -4,10 +4,10 @@ FROM jupyterhub/jupyterhub:1.2.2
 RUN apt-get update \
   && apt-get install -y wget
 
-RUN wget https://raw.githubusercontent.com/jupyterhub/jupyterhub/1.2.2/examples/cull-idle/cull_idle_servers.py
 
 RUN pip install \
     dockerspawner==12.0 \
+    jupyterhub-idle-culler \
     jupyterhub-ldap-authenticator # oficioso
     # 0.11.1 ultima version anterior, compatible a priori con 1.1.0
     #jhub_cas_authenticator==1.0.0

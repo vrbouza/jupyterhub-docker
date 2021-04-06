@@ -27,7 +27,8 @@ c.LDAPAuthenticator.user_search_filter          = '(&(objectClass=person)(uid={u
 c.LDAPAuthenticator.user_membership_attribute   = 'memberOf'
 c.LDAPAuthenticator.group_search_base           = 'cn=groups,cn=accounts,dc=hep,dc=uniovi,dc=es'
 c.LDAPAuthenticator.group_search_filter         = '(&(objectClass=ipausergroup)(memberOf={group}))'
-c.LDAPAuthenticator.allowed_groups              = ['cn=jupyterhub-users,cn=groups,cn=accounts,dc=hep,dc=uniovi,dc=es']
+c.LDAPAuthenticator.allowed_groups              = ['cn=jupyterhub-users,cn=groups,cn=accounts,dc=hep,dc=uniovi,dc=es',
+                                                   "cn=aeuser,cn=groups,cn=accounts,dc=hep,dc=uniovi,dc=es"]
 c.LDAPAuthenticator.allow_nested_groups         = True
 c.LDAPAuthenticator.username_pattern            = '[a-zA-Z0-9_.][a-zA-Z0-9_.-]{0,252}[a-zA-Z0-9_.$-]?'
 c.LDAPAuthenticator.create_user_home_dir        = True

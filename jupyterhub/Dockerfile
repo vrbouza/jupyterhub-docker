@@ -10,7 +10,7 @@ RUN wget https://raw.githubusercontent.com/jupyterhub/jupyterhub/1.1.0/examples/
 
 RUN pip install \
     dockerspawner==12.0 \
+    jupyterhub-ldap-authenticator # oficioso
     # 0.11.1 ultima version anterior, compatible a priori con 1.1.0
     #jhub_cas_authenticator==1.0.0
     #jupyterhub-ldapauthenticator # oficial
-    jupyterhub-ldap-authenticator # oficioso

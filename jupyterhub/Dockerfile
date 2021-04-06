@@ -1,8 +1,6 @@
 FROM jupyterhub/jupyterhub:1.2.2
 ### 1.1.0 es la que usa el CERN, pero tiene problemas para ejecutarse de forma nativa; ellos lo solucionan porque usan su propia web, de ahí el cambio a 1.2.2
 
-cp ./jupyterhub_config.py /opt/jupyterhub-swaneau/data/srv/jupyterhub/
-
 RUN apt-get update \
   && apt-get install -y wget
 

@@ -6,8 +6,8 @@ services:
     image: jupyterhub_img
     container_name: jupyterhub
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /opt/jupyterhub-swaneau/data/srv/jupyterhub:/srv/jupyterhub
+      - /var/run/docker.sock:/var/run/docker.sock:Z
+      - /opt/jupyterhub-swaneau/data/srv/jupyterhub:/srv/jupyterhub:z
     environment:
       - DOCKER_JUPYTER_CONTAINER=jupyterlab_img
       - DOCKER_NETWORK_NAME=${COMPOSE_PROJECT_NAME}_default
@@ -33,7 +33,7 @@ services:
       - "443:443"
       - "8080:8080"
     volumes:
-      - ./reverse-proxy/traefik.toml:/etc/traefik/traefik.toml
-      - /etc/certs:/etc/certs
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ./reverse-proxy/traefik.toml:/etc/traefik/traefik.toml:z
+      - /etc/certs:/etc/certs:z
+      - /var/run/docker.sock:/var/run/docker.sock:Z
     restart: on-failure
